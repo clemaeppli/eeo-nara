@@ -2,11 +2,11 @@
 Updated 6.12.2024
 
 ## Overview
-EEO-1 files are publicly released by the National Archives (NARA) after 30 years. Years 1966-1993 are currently available on NARA's website. This is a collection of scripts to download and process the data.
+EEO-1 files are publicly released by the National Archives (NARA) after 30 years. Years 1966-1993 are currently available on NARA's website. However, there are some inconsistencies across years. This is a collection of scripts to download and process the data, producing a harmonized Stata-format dataset. Ideally it takes 3 clicks to run the whole thing (1 Batch file and 2 Stata do-files). 
 
 
 ## Contents
-1. download.BAT -- Windows batch script that (a) creates directories for each EEO year (1966 through 1993) as well as a documentation folder (_doc_); (b) downloads everything to those folders; (c) unzips the zipped files (several years are stored on NARA's website zipped).
+1. download.BAT -- Windows batch script that (a) creates directories for each EEO year (1966 through 1993) as well as a documentation folder (_doc_); (b) downloads everything to those folders; (c) unzips the zipped files (several years are stored on NARA's website zipped). 
 2. read_eeo_text_v2.DO -- Stata script that reads in this data as produced by download.BAT. Does some preliminary cleaning.
 3. varlist90.TXT -- a list of variables in the 1990 round. You don't need to run or edit this. _read_eeo_text_v2.do_ uses it to produce a dictionary to read in the 1990s EEOs.
 4. eeo_fix.DO -- Stata script that fixes some issues in the raw EEO data. For the matrix data (demographic by occupation counts) certain columns seem to have been swapped; this script unswaps them.
@@ -25,7 +25,8 @@ The EEO-1 includes several types of reporting units, identified by the _status_ 
 * 3 = headquarters report for multi-establishment emploeyrs
 * 4 = establishment report for estabs with $\ge$ 50 employees
 * 5 = special reporting procedure
-(See p.16 of the documentation pdf _160_8DP.pdf_, downloaded by _download.BAT_ to the _doc_ folder. Also available on the [NARA AWS page](https://s3.amazonaws.com/NARAprodstorage/lz/electronic-records/rg-403/EEO1/160_8DP.pdf))
+  
+(This is described on p.16 of the documentation file _160_8DP.pdf_, downloaded by _download.BAT_ to the _doc_ folder. Also available on the [NARA AWS page](https://s3.amazonaws.com/NARAprodstorage/lz/electronic-records/rg-403/EEO1/160_8DP.pdf))
 
 So if you want to do an establishment-level analysis, you can start by filtering to status codes 1, 3, and 4. For a firm-level analysis, filter to status codes 1 and 2 -- though note that type 2 is not consistently included in every year.
 
