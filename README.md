@@ -1,10 +1,12 @@
 # eeo-nara
-Scripts to download and process EEO-1 data from National Archives
 Update 6.12.2024
 
 **Overview**
 
-EEO-1 files are publicly released by the National Archives (NARA) after 30 years. Years 1966-1993 are currently available on NARA's website. This set of scripts does several things:
+EEO-1 files are publicly released by the National Archives (NARA) after 30 years. Years 1966-1993 are currently available on NARA's website. This is a collection of scripts to download and process the data.
+
+
+**Contents**
 1. download.BAT -- Windows batch script that (a) creates directories for each EEO year (1966 thru 1993) as well as a documentation folder ("doc"); (b) downloads everything to those folders; (c) unzips the zipped files (several years are stored on NARA's website zipped).
 2. read_eeo_text_v2.DO -- Stata script that reads in this data as produced by download.BAT. Does some preliminary cleaning.
 3. varlist90.TXT -- a list of variables in the 1990 round. You don't need to run or edit this. read_eeo_text_v2.do uses it to produce a dictionary to read in the 1990s EEOs.
