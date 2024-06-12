@@ -18,7 +18,7 @@ EEO-1 files are publicly released by the National Archives (NARA) after 30 years
 4. Run read_eeo_text_v2.do. The resulting file, for all years, will be saved to _dta_format/eeo.dta_. (The folder _dta_format_ is created by download.bat)
 5. Run eeo_fix.do to fix the column mixup issues. The resulting all-years file is saved to _dta_format/eeo_fixed.dta_. The last part of this script will tabulate some of the demographic counts across years, which lets you see whether things seem reasonable. If you find any issues please let me know!
 
-## Notes for using the resulting data
+## Notes for using the EEO data
 The EEO-1 includes several types of reporting units, identified by the _status_ variable.
 * 1 = single establishment employers
 * 2 = consolidated report of multi-establishment employers
